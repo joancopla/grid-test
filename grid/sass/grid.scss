@@ -30,12 +30,49 @@ img {
     min-height: 1px;
     }
 
+    //////////////////////BREAKPOINT SMALL RULES/////////////////
 
-    @media #{$breakpoint-medium} {
+    @media #{$breakpoint-small} {
         .wrapper {
             width: 100%;
             padding: 0;
-            max-width: $grid-max-width;
+            max-width: $grid-max-width-small;
+            height: 800px;
+            background-color: black;
+            }
+        @for $i from 1 through $grid-columns {
+            .column-#{$i} {
+                width: 100% / $grid-columns * $i;
+                }
+            }
+        }
+
+        //////////////////////BREAKPOINT MEDIUM RULES/////////////////
+
+        @media #{$breakpoint-medium} {
+            .wrapper {
+                width: 100%;
+                padding: 0;
+                max-width: $grid-max-width-medium;
+                height: 400px;
+                background-color: red;
+                }
+            @for $i from 1 through $grid-columns {
+                .column-#{$i} {
+                    width: 100% / $grid-columns * $i;
+                    }
+                }
+            }
+
+    //////////////////////BREAKPOINT LARGE RULES/////////////////
+
+    @media #{$breakpoint-large} {
+        .wrapper {
+            width: 100%;
+            padding: 0;
+            max-width: $grid-max-width-large;
+            height: 700px;
+            background-color: purple;
             }
         @for $i from 1 through $grid-columns {
             .column-#{$i} {
